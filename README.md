@@ -53,7 +53,9 @@ pod "Cirque"
 
 ## Author
 
-philipengberg, engberg@tonsser.com
+**philipengberg** aka Engberg
+
+![Twitter](/img/Twitter.png)[philipengberg](https://twitter.com/philipengberg)
 
 ## License
 

@@ -38,7 +38,7 @@ public class CirqueView : UIView {
         let zeroAngle = CGFloat(-90.0).degreesToRadians
         let startAngle    = zeroAngle + (CGFloat(360).degreesToRadians * startPosition)
         let finalEndAngle = zeroAngle + (CGFloat(360).degreesToRadians * (startPosition + max(relativeSize, 0)))
-        let fraction = abs(finalEndAngle - startAngle)
+        let totalGradientSize = abs(finalEndAngle - startAngle)
         var runningStartAngle = startAngle
         
         let startColorComponents = fromColor.components
@@ -47,13 +47,13 @@ public class CirqueView : UIView {
         let processPath = UIBezierPath()
         processPath.lineWidth = lineWidth
         
-        for step in stride(from: CGFloat(0), through: 1.0, by: stepSize) {
+        for stepFraction in stride(from: CGFloat(0), through: 1.0, by: stepSize) {
             
-            let endAngle = (step * fraction) + startAngle
+            let endAngle = (stepFraction * totalGradientSize) + startAngle
             
-            let newRed   = startColorComponents.red   + (finalColorComponents.red   - startColorComponents.red)   * step
-            let newGreen = startColorComponents.green + (finalColorComponents.green - startColorComponents.green) * step
-            let newBlue  = startColorComponents.blue  + (finalColorComponents.blue  - startColorComponents.blue)  * step
+            let newRed   = startColorComponents.red   + (finalColorComponents.red   - startColorComponents.red)   * stepFraction
+            let newGreen = startColorComponents.green + (finalColorComponents.green - startColorComponents.green) * stepFraction
+            let newBlue  = startColorComponents.blue  + (finalColorComponents.blue  - startColorComponents.blue)  * stepFraction
             let progressColor = UIColor(red:newRed, green:newGreen, blue:newBlue, alpha:1.0)
             
             progressColor.set()
@@ -62,7 +62,8 @@ public class CirqueView : UIView {
             processPath.stroke()
             processPath.removeAllPoints()
             
-            runningStartAngle = endAngle - 0.01
+            runningStartAngle = endAngle - stepSize / 10
+            
         }
     }
     

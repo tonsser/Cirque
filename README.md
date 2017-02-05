@@ -30,9 +30,12 @@ and boom 💥
 
 ### Customization
 You can further customize the appearance be tweaking
-- `transitionSize`: A `Float` between 0 and 1 indicating the percentage of the circle circumference that should be used to transition fully from one color to the next. **Default value** is `0.025`, i.e. 2.5 %.
-- `stepSize`: A `Float` between 0 and 1 indicating the percentage of the `transitionSize` that each gradient step should fill. So with a value of `0.1`, each color step is 10% of the `transitionSize`, meaning there will be 10 steps in total. **Default value** is `0.1`, i.e. 10 steps.
-- `lineWidth`: A `Float` indicating the stroke width of the circle. **Default value** is `5`
+
+| Property | Description | Default value |
+|:---------|:------------|:--------------|
+|`transitionSize`| A `Float` between 0 and 1 indicating the percentage of the circle circumference that should be used to transition fully from one color to the next. | `0.025` |
+|`stepSize`| A `Float` between 0 and 1 indicating the percentage of the `transitionSize` that each gradient step should fill. So with a value of `0.1`, each color step is 10% of the `transitionSize`, meaning there will be 10 steps in total. | `0.1` |
+|`lineWidth`| A `Float` indicating the stroke width of the circle. | `5` |
 
 ## Installation
 

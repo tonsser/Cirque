@@ -21,7 +21,7 @@ public class CirqueView : UIView {
         }
     }
     
-    public var transitionSize: CGFloat = 0.025
+    public var transitionSize: CGFloat = 0.05
     public var stepSize: CGFloat = 0.1
     public var lineWidth: CGFloat = 5
     
@@ -106,9 +106,9 @@ public class CirqueView : UIView {
             
             var cutOff: CGFloat = 0
             if index == 0 || index == dataPoints.count - 1 {
-                cutOff = transitionSize
+                cutOff = transitionSize / 2
             } else {
-                cutOff = 2 * transitionSize
+                cutOff = transitionSize
             }
             
             // Offset start point by the curresnt size
@@ -121,7 +121,7 @@ public class CirqueView : UIView {
             // If we are not at the end, we should draw a gradient
             if index < dataPoints.count - 1 {
                 start += size
-                size = 2 * transitionSize
+                size = transitionSize
                 let nextRating = dataPoints[index + 1]
                 drawGradient(rating.color, toColor: nextRating.color, from: start, with: size)
             }
@@ -131,6 +131,6 @@ public class CirqueView : UIView {
     
     func minSize(for ratings: [CirqueDataType]) -> Double {
         guard ratings.count > 1 else { return 0 }
-        return (Double(ratings.count) - 1) * 2 * Double(transitionSize)
+        return (Double(ratings.count) - 1) * Double(transitionSize)
     }
 }

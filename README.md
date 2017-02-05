@@ -42,6 +42,13 @@ The idea is to draw as much as possible with ordinary strokes on a bezier arc. T
 
 ![Example](/img/HowItWorks.gif)
 
+## Animation
+I have implemented a working prototype that can animate the progress of the circle, while keeping the relative proportions of the circle as it expands.
+
+The challenge is that in order to draw many small arc segments, the most feasible thing is to do it directly in `drawRect:`, which means there are no layers to animate.
+
+My working prototype supports custom duration and timing functions. If you would to se this supported directly in this component, please throw a 👍 on [this](https://github.com/tonsser/Cirque/issues/1) issue.
+
 ## Installation
 
 Cirque is available through [CocoaPods](http://cocoapods.org). To install

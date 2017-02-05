@@ -17,7 +17,17 @@ Cirque is an iOS component that enables you to draw **multi color** circle strok
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+First create a data structure that implements `CirqueDataType` (an `enum` would make sense), then create a new `CirqueView` and set the `dataPoints` property with an array of `CirqueDataType`.
+```swift
+let cirque = CirqueView(frame: CGRect(x: 0, y: 0, width: 110, height: 110))
+cirque.dataPoints = [RankingGroup.match(value: 0.3), 
+                     RankingGroup.achievements(value: 0.2), 
+                     RankingGroup.votes(value: 0.2)]
+view.addSubview(cirque)
+```
+and boom 💥
+
+![Example](/Example.png)
 
 ## Installation
 

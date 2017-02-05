@@ -1,5 +1,5 @@
 
-![cirque icon 2](/Cirque.png)
+![cirque icon 2](/img/Cirque.png)
 
 [![CI Status](http://img.shields.io/travis/philipengberg/Cirque.svg?style=flat)](https://travis-ci.org/philipengberg/Cirque)
 [![Version](https://img.shields.io/cocoapods/v/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
@@ -26,7 +26,7 @@ view.addSubview(cirque)
 ```
 and boom 💥
 
-![Example](/Example.png)
+![Example](/img/Example.png)
 
 ### Customization
 You can further customize the appearance be tweaking
@@ -36,6 +36,11 @@ You can further customize the appearance be tweaking
 |**`transitionSize`**| A `Float` between 0 and 1 indicating the percentage of the circle circumference that should be used to transition fully from one color to the next. | `0.025` |
 |**`stepSize`**| A `Float` between 0 and 1 indicating the percentage of the `transitionSize` that each gradient step should fill. So with a value of `0.1`, each color step is 10% of the `transitionSize`, meaning there will be 10 steps in total. | `0.1` |
 |**`lineWidth`**| A `Float` indicating the stroke width of the circle. | `5` |
+
+### How it works
+The idea is to draw as much as possible with ordinary strokes on a bezier arc. Then when it's time to shift color, `1/stepSize` little arcs are drawn which each go one step closer to the next color. This is illustrated below:
+
+![Example](/img/HowItWorks.gif)
 
 ## Installation
 

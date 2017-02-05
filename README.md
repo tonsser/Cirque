@@ -1,7 +1,7 @@
 
 ![cirque icon 2](/img/Cirque.png)
 
-[![CI Status](http://img.shields.io/travis/philipengberg/Cirque.svg?style=flat)](https://travis-ci.org/philipengberg/Cirque)
+![Swift](https://img.shields.io/badge/Swift-3.0-brightgreen.svg)
 [![Version](https://img.shields.io/cocoapods/v/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
 [![License](https://img.shields.io/cocoapods/l/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
 [![Platform](https://img.shields.io/cocoapods/p/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)

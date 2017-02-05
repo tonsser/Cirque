@@ -10,7 +10,7 @@ import Foundation
 
 public protocol CirqueDataType {
     var color : UIColor { get }
-    var value : Float { get }
+    var value : Double { get }
 }
 
 public class CirqueView : UIView {

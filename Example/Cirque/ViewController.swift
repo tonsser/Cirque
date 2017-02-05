@@ -10,9 +10,9 @@ import UIKit
 import Cirque
 
 enum RankingGroup : CirqueDataType {
-    case match(value: Float)
-    case achievements(value: Float)
-    case votes(value: Float)
+    case match(value: Double)
+    case achievements(value: Double)
+    case votes(value: Double)
     
     var color : UIColor {
         switch self {
@@ -22,7 +22,7 @@ enum RankingGroup : CirqueDataType {
         }
     }
     
-    var value : Float {
+    var value : Double {
         switch self {
         case .match(let value):         return value
         case .achievements(let value):  return value

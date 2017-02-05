@@ -1,0 +1,22 @@
+{
+  "name": "Cirque",
+  "version": "0.1.0",
+  "summary": "A short description of Cirque.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/philipengberg/Cirque",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "philipengberg": "philipengberg@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/philipengberg/Cirque.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Cirque/Classes/**/*"
+}

@@ -1,0 +1,6 @@
+framework module Cirque {
+  umbrella header "Cirque-umbrella.h"
+
+  export *
+  module * { export * }
+}

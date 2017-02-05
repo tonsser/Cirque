@@ -1,0 +1,7 @@
+use_frameworks!
+
+target 'Cirque_Example' do
+  
+  pod 'Cirque', :path => '../'
+
+end

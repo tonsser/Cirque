@@ -1,0 +1,16 @@
+PODS:
+  - Cirque (0.1.0)
+
+DEPENDENCIES:
+  - Cirque (from `../`)
+
+EXTERNAL SOURCES:
+  Cirque:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Cirque: 9df4525e7ff366a9b30b8376b5dbb73993a32a9e
+
+PODFILE CHECKSUM: fff99c80f9a2fca9844e13e110b1cebfcd7bb85a
+
+COCOAPODS: 1.2.0

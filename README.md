@@ -6,8 +6,7 @@
 [![License](https://img.shields.io/cocoapods/l/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
 [![Platform](https://img.shields.io/cocoapods/p/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
 
-# Cirque
-
+# Cirque 🎨
 Cirque is an iOS component that enables you to draw **multi color** circle strokes with **gradient trasitions** between colors.
 
 ## Why?
@@ -28,6 +27,12 @@ view.addSubview(cirque)
 and boom 💥
 
 ![Example](/Example.png)
+
+### Customization
+You can further customize the appearance be tweaking
+- `transitionSize`: A `Float` between 0 and 1 indicating the percentage of the circle circumference that should be used to transition fully from one color to the next. **Default value** is `0.025`, i.e. 2.5 %.
+- `stepSize`: A `Float` between 0 and 1 indicating the percentage of the `transitionSize` that each gradient step should fill. So with a value of `0.1`, each color step is 10% of the `transitionSize`, meaning there will be 10 steps in total. **Default value** is `0.1`, i.e. 10 steps.
+- `lineWidth`: A `Float` indicating the stroke width of the circle.
 
 ## Installation
 

@@ -53,7 +53,9 @@ pod "Cirque"
 
 ## Author
 
-**philipengberg** aka Engberg
+**Mr. Engberg**, Lead Mobile Developer @ [Tonsser](https://github.com/tonsser)
+
+![GitHub](/img/GitHub.png)[philipengberg](https://github.com/philipengberg)
 
 ![Twitter](/img/Twitter.png)[philipengberg](https://twitter.com/philipengberg)
 

@@ -1,8 +1,7 @@
 
-# Cirque
-
 ![cirque icon 2](/img/Cirque.png)
 
+# Cirque
 
 ![Swift](https://img.shields.io/badge/Swift-3.0-brightgreen.svg)
 [![Version](https://img.shields.io/cocoapods/v/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)

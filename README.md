@@ -1,7 +1,5 @@
 
-# Cirque 🎨
-Cirque is an iOS component that enables you to draw **multi color** circle strokes with **gradient trasitions** between colors.
-
+# Cirque
 
 ![cirque icon 2](/img/Cirque.png)
 
@@ -10,6 +8,8 @@ Cirque is an iOS component that enables you to draw **multi color** circle strok
 [![Version](https://img.shields.io/cocoapods/v/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
 [![License](https://img.shields.io/cocoapods/l/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
 [![Platform](https://img.shields.io/cocoapods/p/Cirque.svg?style=flat)](http://cocoapods.org/pods/Cirque)
+
+Cirque is an iOS component that enables you to draw **multi color** circle strokes with **gradient trasitions** between colors.
 
 ## Why?
 `CAGradientLayer` currently only supports linear gradients, and most solutions out there only support two colors. However, we needed a modular, configurable component that could handle any number of colors at any size.

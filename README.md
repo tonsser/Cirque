@@ -37,6 +37,8 @@ You can further customize the appearance be tweaking
 |**`stepSize`**| A `Float` between 0 and 1 indicating the percentage of the `transitionSize` that each gradient step should fill. So with a value of `0.1`, each color step is 10% of the `transitionSize`, meaning there will be 10 steps in total. | `0.1` |
 |**`lineWidth`**| A `Float` indicating the stroke width of the circle. | `5` |
 
+![Expainer](/img/Explainer.png)
+
 ### How it works
 The idea is to draw as much as possible with ordinary strokes on a bezier arc. Then when it's time to shift color, `1/stepSize` little arcs are drawn which each go one step closer to the next color. This is illustrated below:
 

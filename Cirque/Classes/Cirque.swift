@@ -129,7 +129,7 @@ public class CirqueView : UIView {
         }
     }
     
-    func minSize(for ratings: [CirqueDataType]) -> Double {
+    public func minSize(for ratings: [CirqueDataType]) -> Double {
         guard ratings.count > 1 else { return 0 }
         return (Double(ratings.count) - 1) * Double(transitionSize)
     }

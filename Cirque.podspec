@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Cirque'
-  s.version          = '1.0'
+  s.version          = '1.0.1'
   s.summary          = 'A multi color gradient circle progress view'
 
 # This description is used to generate tags and improve search results.

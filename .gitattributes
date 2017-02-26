@@ -3,3 +3,4 @@
 /Example/* linguist-vendored
 /img/* linguist-vendored
 /Cirque/Classes/* linguis-vendore=false
+/Cirque.podspec linguist-vendored

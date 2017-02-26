@@ -1,3 +1,4 @@
 *.pbxproj merge=union
 
-/Example/Pods/* linguist-vendored
+/* linguist-vendored
+/Cirque/Classes/* linguis-vendore=false

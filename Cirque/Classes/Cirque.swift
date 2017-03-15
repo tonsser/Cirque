@@ -119,7 +119,7 @@ public class CirqueView : UIView {
             drawSolid(rating.color, from: start, with: size)
             
             // If we are not at the end, we should draw a gradient
-            if index < dataPoints.count - 1 {
+            if index < dataPoints.count - 1 && dataPoints[index].value > 0 && dataPoints[index + 1].value > 0 {
                 start += size
                 size = transitionSize
                 let nextRating = dataPoints[index + 1]

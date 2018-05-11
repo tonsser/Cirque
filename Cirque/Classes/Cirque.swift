@@ -54,7 +54,8 @@ public class CirqueView : UIView {
             let newRed   = startColorComponents.red   + (finalColorComponents.red   - startColorComponents.red)   * stepFraction
             let newGreen = startColorComponents.green + (finalColorComponents.green - startColorComponents.green) * stepFraction
             let newBlue  = startColorComponents.blue  + (finalColorComponents.blue  - startColorComponents.blue)  * stepFraction
-            let progressColor = UIColor(red:newRed, green:newGreen, blue:newBlue, alpha:1.0)
+            let newAlpha = startColorComponents.alpha + (finalColorComponents.alpha - startColorComponents.alpha) * stepFraction
+            let progressColor = UIColor(red:newRed, green:newGreen, blue:newBlue, alpha:newAlpha)
             
             progressColor.set()
             
@@ -62,7 +63,7 @@ public class CirqueView : UIView {
             processPath.stroke()
             processPath.removeAllPoints()
             
-            runningStartAngle = endAngle - stepSize / 10
+            runningStartAngle = endAngle - stepSize / 100
             
         }
     }

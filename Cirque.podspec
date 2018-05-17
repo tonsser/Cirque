@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Cirque'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'A multi color gradient circle progress view'
   s.description      = <<-DESC
 Cirque is an iOS component that enables you to draw multi color circle strokes with gradient trasitions between colors.

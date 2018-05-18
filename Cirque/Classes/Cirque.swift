@@ -89,14 +89,14 @@ public class CirqueView : UIView {
         
         let context = UIGraphicsGetCurrentContext()
         
-        // Cleaer any previous drawings
+        // Clear any previous drawings
         context?.clear(rect)
         
         var start: CGFloat = 0.0 // Start of the the stroke in radians
         var size: CGFloat = 0.0 // Size (or length) of the stroke in percent
         let overlapSize: CGFloat = 0.001 // How much to backtrack before drawing to ensure that there are no gaps between stroke elements
         
-        // If there is jus one data point, just draw simple solig stroke
+        // If there is just one data point, just draw simple solid stroke
         guard dataPoints.count > 1 else {
             drawSolid(dataPoints[0].color, from: start, with: CGFloat(dataPoints[0].value))
             return

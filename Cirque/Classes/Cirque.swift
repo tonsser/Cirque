@@ -24,6 +24,7 @@ public class CirqueView : UIView {
     public var transitionSize: CGFloat = 0.05
     public var stepSize: CGFloat = 0.1
     public var lineWidth: CGFloat = 5
+    public var isClockwise: Bool = true
     
     fileprivate var circleRadius : CGFloat {
         return (self.bounds.size.width - lineWidth)/2
@@ -36,8 +37,8 @@ public class CirqueView : UIView {
     fileprivate func drawGradient(_ fromColor: UIColor, toColor: UIColor, from startPosition: CGFloat, with relativeSize: CGFloat) {
         
         let zeroAngle = CGFloat(-90.0).degreesToRadians
-        let startAngle    = zeroAngle + (CGFloat(360).degreesToRadians * startPosition)
-        let finalEndAngle = zeroAngle + (CGFloat(360).degreesToRadians * (startPosition + max(relativeSize, 0)))
+        let startAngle    = zeroAngle + (clockwise: isClockwise, (CGFloat(360).degreesToRadians * startPosition))
+        let finalEndAngle = zeroAngle + (clockwise: isClockwise, (CGFloat(360).degreesToRadians * (startPosition + max(relativeSize, 0))))
         let totalGradientSize = abs(finalEndAngle - startAngle)
         var runningStartAngle = startAngle
         
@@ -49,7 +50,7 @@ public class CirqueView : UIView {
         
         for stepFraction in stride(from: CGFloat(0), through: 1.0, by: stepSize) {
             
-            let endAngle = (stepFraction * totalGradientSize) + startAngle
+            let endAngle = startAngle + (clockwise: isClockwise, rhs:(stepFraction * totalGradientSize))
             
             let newRed   = startColorComponents.red   + (finalColorComponents.red   - startColorComponents.red)   * stepFraction
             let newGreen = startColorComponents.green + (finalColorComponents.green - startColorComponents.green) * stepFraction
@@ -59,7 +60,7 @@ public class CirqueView : UIView {
             
             progressColor.set()
             
-            processPath.addArc(withCenter: circleCenter, radius: circleRadius, startAngle: runningStartAngle, endAngle: endAngle, clockwise: true)
+            processPath.addArc(withCenter: circleCenter, radius: circleRadius, startAngle: runningStartAngle, endAngle: endAngle, clockwise: isClockwise)
             processPath.stroke()
             processPath.removeAllPoints()
             
@@ -70,14 +71,14 @@ public class CirqueView : UIView {
     
     fileprivate func drawSolid(_ color: UIColor, from startPosition: CGFloat, with relativeSize: CGFloat) {
         let zeroAngle = CGFloat(-90.0).degreesToRadians
-        let startAngle    = zeroAngle + (CGFloat(360).degreesToRadians * startPosition)
-        let finalEndAngle = zeroAngle + (CGFloat(360).degreesToRadians * (startPosition + max(relativeSize, 0)))
+        let startAngle    = zeroAngle + (clockwise: isClockwise, (CGFloat(360).degreesToRadians * startPosition))
+        let finalEndAngle = zeroAngle + (clockwise: isClockwise, (CGFloat(360).degreesToRadians * (startPosition + max(relativeSize, 0))))
         let processPath = UIBezierPath()
         processPath.lineWidth = lineWidth
         
         color.set()
         
-        processPath.addArc(withCenter: circleCenter, radius: circleRadius, startAngle: startAngle, endAngle: finalEndAngle, clockwise: true)
+        processPath.addArc(withCenter: circleCenter, radius: circleRadius, startAngle: startAngle, endAngle: finalEndAngle, clockwise: isClockwise)
         processPath.stroke()
         processPath.removeAllPoints()
     }
@@ -89,14 +90,14 @@ public class CirqueView : UIView {
         
         let context = UIGraphicsGetCurrentContext()
         
-        // Cleaer any previous drawings
+        // Clear any previous drawings
         context?.clear(rect)
         
         var start: CGFloat = 0.0 // Start of the the stroke in radians
         var size: CGFloat = 0.0 // Size (or length) of the stroke in percent
         let overlapSize: CGFloat = 0.001 // How much to backtrack before drawing to ensure that there are no gaps between stroke elements
         
-        // If there is jus one data point, just draw simple solig stroke
+        // If there is just one data point, just draw simple solid stroke
         guard dataPoints.count > 1 else {
             drawSolid(dataPoints[0].color, from: start, with: CGFloat(dataPoints[0].value))
             return
